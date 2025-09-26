@@ -1,18 +1,3 @@
-Github introduction
-====
-
-1. Create a Github.com account
-2. Add your account to [google sheet](https://docs.google.com/spreadsheets/d/1D32Ea9Da29y_O3E6ciGX4zHeP26oMTq3Wi1nrp2JuPw/edit#gid=0)
-3. read the directions on how to [run visual studio](https://hpcc.ucr.edu/manuals/hpc_cluster/selected_software/vscode/) - this is linked through your github account and allows you to run via the web or have visual studio on your laptop but connect to the hpcc server for file saving and github push/pull/commit commands as well. The goal of homework 1 is for you to practice using these tools even though they are new and maybe a little confusing. You can also just use jupyter notebook for your editing of code if you don't want to try these other things out.
-
-## There are two homeworks for you to accept:
-1. [github intro](https://classroom.github.com/a/MGdjhKeJ) - this is to learn and pratice about github
-2. [HW1 UNIX](https://classroom.github.com/a/OLIUUahw)- this is to do very basic UNIX and test checkout/commit/push to github plus issuing one or two commands
-
-Github practice
-=== 
-1. From [first link](https://classroom.github.com/a/MGdjhKeJ) you'll read and follow some of the videos and instructions in the github intro repository.
-
 UNIX practice
 ====
 On the UNIX command line. Go into your bigdata folder. If you have not used the cluster before then you will be in the `gen220` project. Or you may have your own lab bigdata folder.
