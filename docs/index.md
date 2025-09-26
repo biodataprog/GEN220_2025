@@ -38,11 +38,7 @@ git clone https://github.com/biodataprog/GEN220_data.git
 
 # Homework
 
-* HW1 - [Intro](Assignments/HW1) [PDF](Assignments/HW1.pdf)
-* HW2 - [Airports](Assignments/HW2) [PDF](Assignments/HW2.pdf)
-* HW3 - [Table Seating and Scattergories](Assignments/HW3) [PDF](Assignments/HW3.pdf)
-* HW4 
-* HW5
+* HW0 - [Intro](Assignments/HW0) [PDF](Assignments/HW0.pdf)
 
 # Project
 
