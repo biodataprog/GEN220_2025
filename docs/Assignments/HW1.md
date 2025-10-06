@@ -1,18 +1,35 @@
 UNIX practice
 ====
 On the UNIX command line. Go into your bigdata folder. If you have not used the cluster before then you will be in the `gen220` project. Or you may have your own lab bigdata folder.
+
+See [Text Editors in UNIX](https://hpcc.ucr.edu/manuals/linux_basics/text/)
+While it takes a few steps to install and setup, [VisualStudio](https://code.visualstudio.com/download) is a great resource
+you can edit on your local machine but saves changes on HPCC. See https://hpcc.ucr.edu/manuals/hpc_cluster/selected_software/vscode/
+
+__This should work__
 ```
-cd ~/bigdata # this should work but if it doesn't 
+cd ~/bigdata 
+```
+__but if it doesn't__
+```
 cd /bigdata/gen220/$USER # will go into your bigdata folder for the class 
-# if the above doesn't work you are likely already in a lab group on HPCC
-cd /bigdata/$GROUP/$USER # should work since $USER is your login and $GROUP is your primary labgroup
 ```
+__But if you already had an account on the cluster then__
+# if the above doesn't work you are likely already in a lab group on HPCC
+```
+cd /bigdata/$GROUP/$USER # should work since $USER is your login and $GROUP is your primary lab group
+# you can see what groups you are in by typing
+groups
+```
+
 
 For your homework:
 1. Accept the homework 1 problem - (see link in Canvas). 
 2. Create a folder to work in on HPCC (or your own computer): `mkdir -p ~/bigdata/gen220/homework` and then `cd  ~/bigdata/gen220/homework`
 3. Checkout the GEN220 data folder `git clone https://github.com/biodataprog/GEN220_data.git`
 Now you want to make a folder for your work for this class
+
+The steps look like this:
 ```
 # you can make a folder for GEN220
 mkdir gen220
@@ -23,6 +40,7 @@ git clone https://github.com/biodataprog/GEN220_data.git
 # now go into this folder
 cd GEN220_data
 ```
+
 Look around in the folder. Go into the `tabular` folder where I've stored some tab or comma delimited data.  You will later need to copy a file from this folder into your homework folder.
 
 4. Checkout the homework 1 github repository created in step 2. (if you [setup SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) in github 
@@ -34,11 +52,13 @@ OR for the https will need to [create a token as your password](https://docs.git
 git clone https://github.com/biodataprog/2025-hw1-YOURGITHUBID.git
 ```
 6. Go into your folder (`cd 2025-hw1-YOURGITHUBID`). 
-7. Edit a script in there called `filesize.sh`; you can do this in jupyter on web, you can edit on the command line with `nano`, `vi`, or `emacs`, or you can [use ssh with aisual studio tunnel](https://docs.google.com/presentation/d/1pEXb4H47atpWruV0qxoYcZxtLc3dPk9ehIXNkf8Zv1g/edit) or 
+
+7. Edit a script in there called `filesize.sh`; you can do this in jupyter on web, you can edit on the command line with `nano`, `vi`, or `emacs`, or you can [use visual studio tunnel](https://docs.google.com/presentation/d/1pEXb4H47atpWruV0qxoYcZxtLc3dPk9ehIXNkf8Zv1g/edit) 
 8. Add some code to this script which achieve the directions at the bottom of this
-9. Test it out (run the `./filesize.sh`). 
+9. Test it out (run the `./filecount.sh`). 
 10. To submit your homework (and you can do this more than once), this requires doing `git commit` and then `git push`
 ```
+
 # this step saves a version of the code
 git commit -m "This is a homework 1 solution" filesize.sh
 # this step will push the data from HPCC or your computer UP to the github site
@@ -51,13 +71,9 @@ git push
 Tasks for Homework 1
 ====
 1. copy the `threatened-species.csv.gz` file - see info here [HW1](https://biodataprog.github.io/GEN220_2025/Assignments/HW1) or you can just run the included `./setup.sh` script to download. but also encourage you to practice with `cp` command.
-2. Update a script called `filesize.sh`, that script should do the following:
+2. Write as script called `answer1.sh`:
   * print out the size of the threatened-species.csv.gz using `du` or `ls -l`
-  * Uncompress the file with `gunzip` while leaving the original alone by adding the '-k' option (`gunzip -k threatened-species.csv.gz`), add a `-f` option so it will overwrite the new file as well in case you run this more than one time.
-  *  Print out the size of the new uncompressed file with `du` or `ls -l`
-  * print out the number lines in the uncompressed file size
-  * BONUS: if you can, print out the compression ratio (compressed filesize / uncompressed size), you can do this if you capture the sizes in two variables and run this - requires using cut/awk to capture the filesizes.
-  ```
-  python -c "print($COMPRESSED / $UNCOMPRESSED)"
-  ```
+  * Count the number of lines in file
+  * Print out the number of unique phyla, order_name in the table using `cut`, `sort`, `uniq`
+  * count how many kingdom FUNGI are present in the file?
 3. Check in your changes with `git commit -m 'a message'` and `git push` to save the changes to github.
