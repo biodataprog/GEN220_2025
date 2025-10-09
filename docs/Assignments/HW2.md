@@ -18,25 +18,28 @@ I have created starter scripts for you to update and add the necessary code to s
    c. uncompress the files
 
 1. Write a python script called 'problem1.py' 
-   a. Have your python script calculate the percent GC (number of G and C bases in the sequence file divided by the total length of the sequence) content the two files downloaded above. Print out the GC percentage for each of the files.
+   
+    a. Have your python script calculate the percent GC (number of G and C bases in the sequence file divided by the total length of the sequence) content the two files downloaded above. Print out the GC percentage for each of the files.
 
-   **Bonus** - make the script more generic to print out filename and GC content for any set of files passed in on the command line 
+    **Bonus** - make the script more generic to print out filename and GC content for any set of files passed in on the command line 
 
 2. Write a script called 'problem2.py' reads in file sequences.txt. 
-   a. It has several columns, have it print out a new report to STDOUT with three columns:
+   
+    a. It has several columns, have it print out a new report to STDOUT with three columns:
    GeneID, gene length (gDNA column), mRNA length
 
-   **Bonus:** print the data sorted so the longest gene (gDNA) comes first and smallest is last.
+    **Bonus:** print the data sorted so the longest gene (gDNA) comes first and smallest is last.
    
 3. Write a script called 'problem3.py' reads in file sequences.txt. 
-   a. Generate a summary table of statistics about gene length - what is the average length, longest and shortest genes
-   b. have the script create file that contains a summary of gene sizes binned by 500bp. Say there were 4 genes in the file of lengths 1100, 750, 1800, 950. 
-   You print out the following to a file called 'lengths_binned.csv'
-   ```
-   bin_size,count
-   0,0
-   500,2
-   1000,1
-   1500,1
-   ```
+   
+    a. Generate a summary table of statistics about gene length - what is the average length, longest and shortest genes
+    b. have the script create file that contains a summary of gene sizes binned by 500bp. Say there were 4 genes in the file of lengths 1100, 750, 1800, 950. 
+    You print out the following to a file called 'lengths_binned.csv'
+      ```
+      bin_size,count
+      0,0
+      500,2
+      1000,1
+      1500,1
+      ```
 
