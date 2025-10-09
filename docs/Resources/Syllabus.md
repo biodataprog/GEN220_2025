@@ -123,9 +123,9 @@ Schedule
 
 | Date	| Day |	Lecture Topic	|	Notes
 | :------ | :---- | :---------------------- | :------------ |
-| Sept-25 |	Th	|	Course Intro / UNIX I: Cmdline, GitHub	|	|
-| Sept-30	|	Tu	|	UNIX II: Biocluster HPCC, Running programs |	|
-| Oct-2	|	Th	|	UNIX III: Tools for data processing	| Homework 0 Due  |
+| Sept-25 |	Th	|	Course Intro / UNIX I: Cmdline, GitHub |	|
+| Sept-30	|	Tu	|	UNIX II: Biocluster HPCC, Running programs |Homework 0 Due |
+| Oct-2	|	Th	|	UNIX III: Tools for data processing	|  |
 | Oct-7	|	Tu	|	Python I: Variables, running, cmdline, strings, math | Homework 1 Due	|
 | Oct-9	|	Th	|	Python II - Logic, loops, lists, iterator; I/O reading/writing files	|  |
 | Oct-14	|	Tu	|	Python III - Pandas and Dictionaries	|	 |
@@ -135,12 +135,12 @@ Schedule
 | Oct-28	|	Tu	|		Alignment and Bioinformatics Algorithms; BLAST cmdline & automation | Homework 3 Due|
 | Oct-30	|	Th	| Cluster HPC, NextFlow. | Class Project Outline/Abstract due |
 | Nov-4	|	Tu	|	TBD 	|	(Stajich away) |
-| Nov-6	|	Th	|	Bioinformatics II - RNASeq analyses | Homework 4 Due |
+| Nov-6	|	Th	|	Bioinformatics II - RNASeq analyses |  |
 | Nov-11 |	Tu	| No Class	- holiday |	|
-| Nov-13	|	Th	|	Bioinformatcis III  - SNPs and variants	|   |
+| Nov-13	|	Th	|	Bioinformatics III  - SNPs and variants	| Homework 4 Due  |
 | Nov-18 |	Tu |	Bioinformatics IV - Protein Sequence analyses (HMMER, InterPro, SignalP) |	|
 | Nov-20 |	Th | Bioinformatics V - Orthology, Phylogenetics, pipeline | 	|
-| Nov-25	|	Tu	| Bioinformatics VI - AlphaFold  | HW 5 Due	|
+| Nov-25	|	Tu	| Bioinformatics VI - AlphaFold  | Homework 5 Due	|
 | Nov-27 |	Th |	** NO CLASS ** | 	|
 | Dec-2 |	Tu |	Genome and Statistical Data visualizations | Extra Topics	|
 | Dec-4 |	Th |  Class Presentations | 	|
