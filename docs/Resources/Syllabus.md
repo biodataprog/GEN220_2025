@@ -135,12 +135,12 @@ Schedule
 | Oct-28	|	Tu	|		Alignment and Bioinformatics Algorithms; BLAST cmdline & automation | Homework 3 Due|
 | Oct-30	|	Th	| Cluster HPC, NextFlow. | Class Project Outline/Abstract due |
 | Nov-4	|	Tu	|	TBD 	|	(Stajich away) |
-| Nov-6	|	Th	|	Bioinformatics II - RNASeq analyses | |
+| Nov-6	|	Th	|	Bioinformatics II - RNASeq analyses | Homework 4 Due |
 | Nov-11 |	Tu	| No Class	- holiday |	|
-| Nov-13	|	Th	|	Bioinformatcis III  - SNPs and variants	|  Homework 4 Due |
+| Nov-13	|	Th	|	Bioinformatcis III  - SNPs and variants	|   |
 | Nov-18 |	Tu |	Bioinformatics IV - Protein Sequence analyses (HMMER, InterPro, SignalP) |	|
 | Nov-20 |	Th | Bioinformatics V - Orthology, Phylogenetics, pipeline | 	|
-| Nov-25	|	Tu	| Bioinformatics VI - AlphaFold  |	|
+| Nov-25	|	Tu	| Bioinformatics VI - AlphaFold  | HW 5 Due	|
 | Nov-27 |	Th |	** NO CLASS ** | 	|
 | Dec-2 |	Tu |	Genome and Statistical Data visualizations | Extra Topics	|
 | Dec-4 |	Th |  Class Presentations | 	|
