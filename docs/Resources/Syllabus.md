@@ -123,28 +123,28 @@ Schedule
 
 | Date	| Day |	Lecture Topic	|	Notes
 | :------ | :---- | :---------------------- | :------------ |
-| Sept-25 |	Th	|	Course Intro / UNIX I: Cmdline, GitHub	|	|
-| Sept-30	|	Tu	|	UNIX II: Biocluster HPCC, Running programs |	|
-| Oct-2	|	Th	|	UNIX III: Tools for data processing	| Homework 1 Due  |
-| Oct-7	|	Tu	|	UNIX IV: Advanced UNIX and data processing	|	|
-| Oct-9	|	Th	|	Python I - Variables, running, cmdline, strings, math	|  |
-| Oct-14	|	Tu	|	Python II - Logic, loops, lists, iterator; I/O reading/writing files	|	 |
-| Oct-16	|	Th |	Python III - Pandas and Dictionaries	|  Homework 2 Due  |
-| Oct-21	|	Tu |	Python IV -  Arrays, functions  |	|
-| Oct-23	|	Th	|	Python V - BioPython | 	|
-| Oct-28	|	Tu	|	Python Data / Bioinformatics I	| |
-| Oct-30	|	Th	|	Alignment and Bioinformatics Algorithms; BLAST cmdline & automation	| Homework 3 Due |
-| Nov-4	|	Tu	|	TBD	|	|
-| Nov-6	|	Th	|	Bioinformatics I - Aligning short reads, coverage, identifying variants | |
+| Sept-25 |	Th	|	Course Intro / UNIX I: Cmdline, GitHub |	|
+| Sept-30	|	Tu	|	UNIX II: Biocluster HPCC, Running programs |Homework 0 Due |
+| Oct-2	|	Th	|	UNIX III: Tools for data processing	|  |
+| Oct-7	|	Tu	|	Python I: Variables, running, cmdline, strings, math | Homework 1 Due	|
+| Oct-9	|	Th	|	Python II - Logic, loops, lists, iterator; I/O reading/writing files	|  |
+| Oct-14	|	Tu	|	Python III - Pandas and Dictionaries	|	 |
+| Oct-16	|	Th | Python IV -  Functions, modules, BioPython |  Homework 2 Due  |
+| Oct-21	|	Tu |	Python V - Regular Expressions|	|
+| Oct-23	|	Th	|	Python Data / Bioinformatics I. Class Project Info | 	|
+| Oct-28	|	Tu	|		Alignment and Bioinformatics Algorithms; BLAST cmdline & automation | Homework 3 Due|
+| Oct-30	|	Th	| Cluster HPC, NextFlow. | Class Project Outline/Abstract due |
+| Nov-4	|	Tu	|	TBD 	|	(Stajich away) |
+| Nov-6	|	Th	|	Bioinformatics II - RNASeq analyses |  |
 | Nov-11 |	Tu	| No Class	- holiday |	|
-| Nov-13	|	Th	|		Bioinformatics II - RNASeq analyses	|  Homework 4 Due |
-| Nov-18 |	Tu |	Bioinformatics III - Genome Assembly  |	|
-| Nov-20 |	Th | Bioinformatics IV - Protein Sequence analyses (HMMER, InterPro, SignalP)	 | 	|
-| Nov-25	|	Tu	| Bioinformatics V - Orthology, Phylogenetics and automation  |	|
+| Nov-13	|	Th	|	Bioinformatics III  - SNPs and variants	| Homework 4 Due  |
+| Nov-18 |	Tu |	Bioinformatics IV - Protein Sequence analyses (HMMER, InterPro, SignalP) |	|
+| Nov-20 |	Th | Bioinformatics V - Orthology, Phylogenetics, pipeline | 	|
+| Nov-25	|	Tu	| Bioinformatics VI - AlphaFold  | Homework 5 Due	|
 | Nov-27 |	Th |	** NO CLASS ** | 	|
-| Dec-2 |	Tu |	Data visualization in R and python  | Extra Topics	|
+| Dec-2 |	Tu |	Genome and Statistical Data visualizations | Extra Topics	|
 | Dec-4 |	Th |  Class Presentations | 	|
-| TBD | | Final papers due | |
+| Dec-10 | Wed | Final papers due | |
 ----------
 
 *note these dates and topics may changes if illness or conflict arises. Class will also vote to emphasize special topics towards the end of quarter.

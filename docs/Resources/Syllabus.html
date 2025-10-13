@@ -60,6 +60,10 @@
     img {
       max-width: 100%;
     }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
     h1, h2, h3, h4, h5, h6 {
       margin-top: 1.4em;
     }
@@ -152,17 +156,17 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <p>Syllabus for GEN220: High Throughput Biological Data Processing</p>
@@ -185,10 +189,10 @@ throughput biological data through homework assignments and team
 projects.</p>
 <p>Units: 3</p>
 <p>Instructor: Jason Stajich (jason.stajich@ucr.edu)</p>
-<p>Time and location: W/F 3-5PM Campbell Hall 104</p>
-<p>Office Hours: M (via Zoom)</p>
+<p>Time and location: T/T 1-3PM Boyce Hall 1467</p>
+<p>Office Hours: Wed 9-10 and best by appointment.</p>
 <p><a
-href="https://biodataprog.github.io/GEN220_2023/">https://biodataprog.github.io/GEN220_2023/</a></p>
+href="https://biodataprog.github.io/GEN220_2025/">https://biodataprog.github.io/GEN220_2025/</a></p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>Coursework in genetics or molecular biology or permission of
@@ -298,7 +302,7 @@ the project.</p></li>
 <col style="width: 27%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;">Date</th>
 <th style="text-align: left;">Day</th>
 <th style="text-align: left;">Lecture Topic</th>
@@ -306,146 +310,147 @@ the project.</p></li>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">Sept-29</td>
-<td style="text-align: left;">F</td>
+<tr>
+<td style="text-align: left;">Sept-25</td>
+<td style="text-align: left;">Th</td>
 <td style="text-align: left;">Course Intro / UNIX I: Cmdline,
 GitHub</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Oct-4</td>
-<td style="text-align: left;">W</td>
+<tr>
+<td style="text-align: left;">Sept-30</td>
+<td style="text-align: left;">Tu</td>
 <td style="text-align: left;">UNIX II: Biocluster HPCC, Running
 programs</td>
+<td style="text-align: left;">Homework 0 Due</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct-2</td>
+<td style="text-align: left;">Th</td>
+<td style="text-align: left;">UNIX III: Tools for data processing</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Oct-6</td>
-<td style="text-align: left;">F</td>
-<td style="text-align: left;">UNIX III: Tools for data processing</td>
+<tr>
+<td style="text-align: left;">Oct-7</td>
+<td style="text-align: left;">Tu</td>
+<td style="text-align: left;">Python I: Variables, running, cmdline,
+strings, math</td>
 <td style="text-align: left;">Homework 1 Due</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Oct-11</td>
-<td style="text-align: left;">W</td>
-<td style="text-align: left;">UNIX IV: Advanced UNIX and data
-processing</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Oct-13</td>
-<td style="text-align: left;">F</td>
-<td style="text-align: left;">Python I - Variables, running, cmdline,
-strings, math</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Oct-18</td>
-<td style="text-align: left;">W</td>
+<tr>
+<td style="text-align: left;">Oct-9</td>
+<td style="text-align: left;">Th</td>
 <td style="text-align: left;">Python II - Logic, loops, lists, iterator;
 I/O reading/writing files</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Oct-20</td>
-<td style="text-align: left;">F</td>
+<tr>
+<td style="text-align: left;">Oct-14</td>
+<td style="text-align: left;">Tu</td>
 <td style="text-align: left;">Python III - Pandas and Dictionaries</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct-16</td>
+<td style="text-align: left;">Th</td>
+<td style="text-align: left;">Python IV - Functions, modules,
+BioPython</td>
 <td style="text-align: left;">Homework 2 Due</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Oct-25</td>
-<td style="text-align: left;">W</td>
-<td style="text-align: left;">Python IV - Arrays, functions</td>
+<tr>
+<td style="text-align: left;">Oct-21</td>
+<td style="text-align: left;">Tu</td>
+<td style="text-align: left;">Python V - Regular Expressions</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Oct-27</td>
-<td style="text-align: left;">F</td>
-<td style="text-align: left;">Python V - BioPython</td>
+<tr>
+<td style="text-align: left;">Oct-23</td>
+<td style="text-align: left;">Th</td>
+<td style="text-align: left;">Python Data / Bioinformatics I. Class
+Project Info</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Nov-1</td>
-<td style="text-align: left;">W</td>
-<td style="text-align: left;">Python Data / Bioinformatics I</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Nov-3</td>
-<td style="text-align: left;">F</td>
+<tr>
+<td style="text-align: left;">Oct-28</td>
+<td style="text-align: left;">Tu</td>
 <td style="text-align: left;">Alignment and Bioinformatics Algorithms;
 BLAST cmdline &amp; automation</td>
 <td style="text-align: left;">Homework 3 Due</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Nov-8</td>
-<td style="text-align: left;">W</td>
-<td style="text-align: left;">Bioinformatics I - Aligning short reads,
-coverage, identifying variants</td>
-<td style="text-align: left;"></td>
+<tr>
+<td style="text-align: left;">Oct-30</td>
+<td style="text-align: left;">Th</td>
+<td style="text-align: left;">Cluster HPC, NextFlow.</td>
+<td style="text-align: left;">Class Project Outline/Abstract due</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Nov-10</td>
-<td style="text-align: left;">F</td>
+<tr>
+<td style="text-align: left;">Nov-4</td>
+<td style="text-align: left;">Tu</td>
+<td style="text-align: left;">TBD</td>
+<td style="text-align: left;">(Stajich away)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov-6</td>
+<td style="text-align: left;">Th</td>
 <td style="text-align: left;">Bioinformatics II - RNASeq analyses</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Nov-15</td>
-<td style="text-align: left;">W</td>
-<td style="text-align: left;">Bioinformatics III - Genome Assembly</td>
+<tr>
+<td style="text-align: left;">Nov-11</td>
+<td style="text-align: left;">Tu</td>
+<td style="text-align: left;">No Class - holiday</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov-13</td>
+<td style="text-align: left;">Th</td>
+<td style="text-align: left;">Bioinformatics III - SNPs and
+variants</td>
 <td style="text-align: left;">Homework 4 Due</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Nov-17</td>
-<td style="text-align: left;">F</td>
+<tr>
+<td style="text-align: left;">Nov-18</td>
+<td style="text-align: left;">Tu</td>
 <td style="text-align: left;">Bioinformatics IV - Protein Sequence
 analyses (HMMER, InterPro, SignalP)</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Nov-22</td>
-<td style="text-align: left;">W</td>
+<tr>
+<td style="text-align: left;">Nov-20</td>
+<td style="text-align: left;">Th</td>
 <td style="text-align: left;">Bioinformatics V - Orthology,
-Phylogenetics and automation</td>
+Phylogenetics, pipeline</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Nov-24</td>
-<td style="text-align: left;">F</td>
-<td style="text-align: left;"><strong>NO CLASS - Native American
-Heritage Day</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Nov-29</td>
-<td style="text-align: left;">W</td>
-<td style="text-align: left;">Data visualization in R and python</td>
+<tr>
+<td style="text-align: left;">Nov-25</td>
+<td style="text-align: left;">Tu</td>
+<td style="text-align: left;">Bioinformatics VI - AlphaFold</td>
 <td style="text-align: left;">Homework 5 Due</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Dec-1</td>
-<td style="text-align: left;">F</td>
-<td style="text-align: left;">Databases in R and basic SQL</td>
-<td style="text-align: left;">Extra Topics</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Dec-6</td>
-<td style="text-align: left;">W</td>
-<td style="text-align: left;">Extra Bioinformatics topics</td>
+<tr>
+<td style="text-align: left;">Nov-27</td>
+<td style="text-align: left;">Th</td>
+<td style="text-align: left;">** NO CLASS **</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Dec-8</td>
-<td style="text-align: left;">F</td>
+<tr>
+<td style="text-align: left;">Dec-2</td>
+<td style="text-align: left;">Tu</td>
+<td style="text-align: left;">Genome and Statistical Data
+visualizations</td>
+<td style="text-align: left;">Extra Topics</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec-4</td>
+<td style="text-align: left;">Th</td>
 <td style="text-align: left;">Class Presentations</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Dec-15</td>
-<td style="text-align: left;">F</td>
-<td style="text-align: left;">Final Project Reports Due</td>
+<tr>
+<td style="text-align: left;">Dec-10</td>
+<td style="text-align: left;">Wed</td>
+<td style="text-align: left;">Final papers due</td>
 <td style="text-align: left;"></td>
 </tr>
 </tbody>

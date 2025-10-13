@@ -39,6 +39,8 @@ git clone https://github.com/biodataprog/GEN220_data.git
 # Homework
 
 * HW0 - [Intro](Assignments/HW0) [PDF](Assignments/HW0.pdf)
+* HW1 - [Unix](Assignments/HW1) [PDF](Assignments/HW1.pdf)
+* HW2 - [Python 1](Assignments/HW2) [PDF](Assignments/HW2.pdf)
 
 # Project
 
