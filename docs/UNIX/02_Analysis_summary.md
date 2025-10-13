@@ -247,6 +247,7 @@ Type of sorting:
 * -f/--ignore-case : upper/lower doesn't matter
 * -r/--reverse : reverse the order
 * -k : specify the key positions to sort by
+* -V : will sort numbers like ABC1 ABC2 ABC100 in order (version sort)
 
 ```bash
 #generate some random numbers between 0 and 100
