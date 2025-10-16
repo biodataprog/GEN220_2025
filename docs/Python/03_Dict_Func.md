@@ -312,22 +312,22 @@ def isheader(line):
 # where the first item is the ID and the second is the sequence
 # it isn't that efficient as it reads it all into memory
 # but this is good enough for our project
-def aspairs(f):
+def aspairs(filename):
     seq_id = ''
     sequence = ''
-    for header,group in itertools.groupby(f, isheader):
-        if header:
-            line = next(group)
-            seq_id = line[1:].split()[0]
-        else:
-            sequence = ''.join(line.strip() for line in group)
-            yield seq_id, sequence
+    with open(filename,"r") as f:
+        for header,group in itertools.groupby(f, isheader):
+    	    if header:
+                line = next(group)
+            	seq_id = line[1:].split()[0]
+            else:
+		sequence = ''.join(line.strip() for line in group)
+            	yield seq_id, sequence
 
 # here is my program
 # get the filename from the cmdline      
-filename = sys.argv[1]
-with open(filename,"r") as f:
-   seqs = dict(aspairs(f))
+seqfilename = sys.argv[1]
+seqs = dict(aspairs(seqfilename))
 
 # iterate through the sequences
 n=0
