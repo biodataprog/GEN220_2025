@@ -40,12 +40,11 @@ total_exon_length = <span class="hljs-number">0</span>
 <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Total length of exons is {} bp ({} kb)&quot;</span>.<span class="hljs-built_in">format</span>(total_exon_length,total_exon_length/<span class="hljs-number">1000</span>))
 </code></pre>
 <h2 id="reading-from-a-comma-delimited-file-use-the-data-file-from-this">Reading from a comma delimited file Use the data file from this</h2>
-<p>site:<br />
-<a href="https://datacarpentry.org/2015-03-09-ISI-CODATA/data/biology/species.csv">https://datacarpentry.org/2015-03-09-ISI-CODATA/data/biology/species.csv</a><br />
-for this example.</p>
+<p>site: <a href="https://raw.githubusercontent.com/biodataprog/GEN220_2025_classexamples/refs/heads/main/python/species.csv">https://raw.githubusercontent.com/biodataprog/GEN220_2025_classexamples/refs/heads/main/python/species.csv</a></p>
+<p>for this example.</p>
 <p>Print out the names of all the genera (genus column) and the counts of each.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">import</span> os, csv, sys
-speciesurl=<span class="hljs-string">&quot;https://datacarpentry.org/2015-03-09-ISI-CODATA/data/biology/species.csv&quot;</span>
+speciesurl=<span class="hljs-string">&quot;https://raw.githubusercontent.com/biodataprog/GEN220_2025_classexamples/refs/heads/main/python/species.csv&quot;</span>
 spfile=os.path.basename(speciesurl)
 <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Species filename is {}&quot;</span>.<span class="hljs-built_in">format</span>(spfile))
 <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(spfile):
