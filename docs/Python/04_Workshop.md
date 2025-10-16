@@ -35,15 +35,15 @@ with open(ricefile,"r") as fh:
 print("Total length of exons is {} bp ({} kb)".format(total_exon_length,total_exon_length/1000))
 ```
 ## Reading from a comma delimited file Use the data file from this
-site:
-[https://datacarpentry.org/2015-03-09-ISI-CODATA/data/biology/species.csv](https://datacarpentry.org/2015-03-09-ISI-CODATA/data/biology/species.csv)
+site: [https://raw.githubusercontent.com/biodataprog/GEN220_2025_classexamples/refs/heads/main/python/species.csv](https://raw.githubusercontent.com/biodataprog/GEN220_2025_classexamples/refs/heads/main/python/species.csv)
+
 for this example.
 
 Print out the names of all the genera (genus column) and the counts of each.
 
 ```python
 import os, csv, sys
-speciesurl="https://datacarpentry.org/2015-03-09-ISI-CODATA/data/biology/species.csv"
+speciesurl="https://raw.githubusercontent.com/biodataprog/GEN220_2025_classexamples/refs/heads/main/python/species.csv"
 spfile=os.path.basename(speciesurl)
 print("Species filename is {}".format(spfile))
 if not os.path.exists(spfile):
