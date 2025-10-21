@@ -13,12 +13,11 @@ Background and much more material is well presented in Prof Girke's class [GEN24
 * BLAST is by far the most taught tool in Bioinformatics. I am
 not going to rehash this completely in this clas.
 * See NCBI's [Introduction to BLAST](http://www.ncbi.nlm.nih.gov/books/NBK52639/)
-* One of 7 Million pages by Googling ["blast introduction tutorial"](https://www.google.com/webhp?#q=blast+introduction+tutorial)
+* many Millions of pages by Googling ["blast introduction tutorial"](https://www.google.com/webhp?#q=blast+introduction+tutorial)
 
 ## BLAST on Biocluster
 There are multiple flavors of BLAST (implementations). Focus on
-the latest version from NCBI (2.9.0+). Default on the cluster is
-2.2.30+
+the latest version from NCBI. 
 
 We will make links to two files which are ORFs from two yeast species. Try this in UNIX
 ```bash
@@ -33,7 +32,7 @@ Now we have some files, set them up for running BLAST. Our
 question is, what ORFs are similar at the DNA level between
 these two species.
 ```bash
-module load ncbi-blast/2.9.0+ # load the module on the biocluster
+module load ncbi-blast # load the module on the biocluster
 makeblastdb -dbtype nucl -in C_glabrata_ORFs.fasta
 ls
 # C_glabrata_ORFs.fasta      C_glabrata_ORFs.fasta.nhr
@@ -270,22 +269,37 @@ The [UniRef50 database](ftp://ftp.uniprot.org/pub/databases/uniprot/uniref/unire
 
 ## Downloading from SRA
 
-The easiest way to download from SRA is using the [sra_download.pl](https://github.com/gerthmicha/perlscripts/blob/master/sra_download.pl) script. This is already installed on the cluster in `/bigdata/stajichlab/shared/bin/sra_download.pl`.
+The easiest way to download from SRA is using the parallel fastq-dump tool. This is already installed on the cluster `module load parallel-fastq-dump`. It uses the NCBI SRA tool fastq-dump but speeds it up by running parts of the SRA to fastq conversion in parallel.
 
-To run this create a file that has a line for each SRA accession number. I have called it `sra.txt` here. This will download the fastq for all the data sets in the file and create a folder for each one.
+You can use this for a single SRA accession. Here's an example one https://www.ncbi.nlm.nih.gov/sra/?term=SRR649944. 
 ```bash
-#SBATCH -p short -N 1 -n 2 --mem 4gb
-module load aspera
-/bigdata/stajichlab/shared/bin/sra_download.pl --ascp --id $ASPERAKEY sra.txt
+#SBATCH -p short -N 1 -c 32 --mem 16gb
+module load parallel-fastq-dump
+OUTDIR=data/sra
+mkdir -p $OUTDIR
+SRARUN=SRR649944 # this is a small example accession
+
+parallel-fastq-dump --tmpdir $SCRATCH --gzip  --sra-id $SRARUN --threads $CPU -O $OUTDIR/$SRARUN --split-files
 ```
 
+If you wanted to run this on a file with multiple accessions
+```bash
+#SBATCH -p short -N 1 -c 32 --mem 16gb
+module load parallel-fastq-dump
+OUTDIR=data/sra
+SAMPLEFILE=sra.txt
+mkdir -p $OUTDIR
+while read SRARUN; do
+  parallel-fastq-dump --tmpdir $SCRATCH --gzip  --sra-id $SRARUN --threads $CPU -O $OUTDIR/$SRARUN --split-files
+done < $SAMPLEFILE
+```
 ## Downloading sequence records from GenBank
 
 You can use several tools to download accessions from genbank.  It does require certain versions of perl are installed or conda.
 
 
 ```BASH
-module load perl/5.20.2
+module load bioperl
 bp_download_query_genbank.pl --query 'AY295118.1'
 >AY295118 Parmelia ernstiae voucher MAF 9805 tubulin gene, partial cds.
 GAGGACATTCCTCCATAATGTGATACGTAGCTCACAGCTTTCAAGGCTTCAAACAACAAA
