@@ -23,12 +23,11 @@
 <li data-marpit-fragment="4">BLAST is by far the most taught tool in Bioinformatics. I am<br />
 not going to rehash this completely in this clas.</li>
 <li data-marpit-fragment="5">See NCBI's <a href="http://www.ncbi.nlm.nih.gov/books/NBK52639/">Introduction to BLAST</a></li>
-<li data-marpit-fragment="6">One of 7 Million pages by Googling <a href="https://www.google.com/webhp?#q=blast+introduction+tutorial">&quot;blast introduction tutorial&quot;</a></li>
+<li data-marpit-fragment="6">many Millions of pages by Googling <a href="https://www.google.com/webhp?#q=blast+introduction+tutorial">&quot;blast introduction tutorial&quot;</a></li>
 </ul>
 <h2 id="blast-on-biocluster">BLAST on Biocluster</h2>
 <p>There are multiple flavors of BLAST (implementations). Focus on<br />
-the latest version from NCBI (2.9.0+). Default on the cluster is<br />
-2.2.30+</p>
+the latest version from NCBI.</p>
 <p>We will make links to two files which are ORFs from two yeast species. Try this in UNIX</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># setup some files to do some searches</span>
 <span class="hljs-built_in">mkdir</span> BLAST_demo
@@ -40,7 +39,7 @@ the latest version from NCBI (2.9.0+). Default on the cluster is<br />
 <p>Now we have some files, set them up for running BLAST. Our<br />
 question is, what ORFs are similar at the DNA level between<br />
 these two species.</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">module load ncbi-blast/2.9.0+ <span class="hljs-comment"># load the module on the biocluster</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">module load ncbi-blast <span class="hljs-comment"># load the module on the biocluster</span>
 makeblastdb -dbtype nucl -<span class="hljs-keyword">in</span> C_glabrata_ORFs.fasta
 <span class="hljs-built_in">ls</span>
 <span class="hljs-comment"># C_glabrata_ORFs.fasta      C_glabrata_ORFs.fasta.nhr</span>
@@ -275,15 +274,29 @@ pigz -dc *.faa.gz &gt; refseq_fungi.faa
 </ul>
 <p>The <a href="ftp://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref50/">UniRef50 database</a> for this as it isn't too big but useful for some relatively fast searching and more comprehensive than swissprot for taxonomic representation.</p>
 <h2 id="downloading-from-sra">Downloading from SRA</h2>
-<p>The easiest way to download from SRA is using the <a href="https://github.com/gerthmicha/perlscripts/blob/master/sra_download.pl">sra_download.pl</a> script. This is already installed on the cluster in <code>/bigdata/stajichlab/shared/bin/sra_download.pl</code>.</p>
-<p>To run this create a file that has a line for each SRA accession number. I have called it <code>sra.txt</code> here. This will download the fastq for all the data sets in the file and create a folder for each one.</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment">#SBATCH -p short -N 1 -n 2 --mem 4gb</span>
-module load aspera
-/bigdata/stajichlab/shared/bin/sra_download.pl --ascp --<span class="hljs-built_in">id</span> <span class="hljs-variable">$ASPERAKEY</span> sra.txt
+<p>The easiest way to download from SRA is using the parallel fastq-dump tool. This is already installed on the cluster <code>module load parallel-fastq-dump</code>. It uses the NCBI SRA tool fastq-dump but speeds it up by running parts of the SRA to fastq conversion in parallel.</p>
+<p>You can use this for a single SRA accession. Here's an example one <a href="https://www.ncbi.nlm.nih.gov/sra/?term=SRR649944">https://www.ncbi.nlm.nih.gov/sra/?term=SRR649944</a>.</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment">#SBATCH -p short -N 1 -c 32 --mem 16gb</span>
+module load parallel-fastq-dump
+OUTDIR=data/sra
+<span class="hljs-built_in">mkdir</span> -p <span class="hljs-variable">$OUTDIR</span>
+SRARUN=SRR649944 <span class="hljs-comment"># this is a small example accession</span>
+
+parallel-fastq-dump --tmpdir <span class="hljs-variable">$SCRATCH</span> --gzip  --sra-id <span class="hljs-variable">$SRARUN</span> --threads <span class="hljs-variable">$CPU</span> -O <span class="hljs-variable">$OUTDIR</span>/<span class="hljs-variable">$SRARUN</span> --split-files
+</code></pre>
+<p>If you wanted to run this on a file with multiple accessions</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment">#SBATCH -p short -N 1 -c 32 --mem 16gb</span>
+module load parallel-fastq-dump
+OUTDIR=data/sra
+SAMPLEFILE=sra.txt
+<span class="hljs-built_in">mkdir</span> -p <span class="hljs-variable">$OUTDIR</span>
+<span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> SRARUN; <span class="hljs-keyword">do</span>
+  parallel-fastq-dump --tmpdir <span class="hljs-variable">$SCRATCH</span> --gzip  --sra-id <span class="hljs-variable">$SRARUN</span> --threads <span class="hljs-variable">$CPU</span> -O <span class="hljs-variable">$OUTDIR</span>/<span class="hljs-variable">$SRARUN</span> --split-files
+<span class="hljs-keyword">done</span> &lt; <span class="hljs-variable">$SAMPLEFILE</span>
 </code></pre>
 <h2 id="downloading-sequence-records-from-genbank">Downloading sequence records from GenBank</h2>
 <p>You can use several tools to download accessions from genbank.  It does require certain versions of perl are installed or conda.</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-BASH">module load perl/5.20.2
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-BASH">module load bioperl
 bp_download_query_genbank.pl --query <span class="hljs-string">&#x27;AY295118.1&#x27;</span>
 &gt;AY295118 Parmelia ernstiae voucher MAF 9805 tubulin gene, partial cds.
 GAGGACATTCCTCCATAATGTGATACGTAGCTCACAGCTTTCAAGGCTTCAAACAACAAA
