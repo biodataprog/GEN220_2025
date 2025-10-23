@@ -14,14 +14,15 @@
 <h2 id="bwa-for-short-read-alignment">BWA for short read alignment</h2>
 <h3 id="index-genome">Index genome</h3>
 <p>It is necessary to index the genome in preparation of alignement.</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>#SBATCH -p short -N 1 -n 2 --mem 2gb
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-meta">#!/usr/bin/bash -l</span>
+<span class="hljs-comment">#SBATCH -p short -N 1 -n 1 -c 2 --mem 2gb</span>
 module load bwa
 GENOME=S_enterica_CT18.fasta
-bwa index $GENOME
+bwa index <span class="hljs-variable">$GENOME</span>
 </code></pre>
 <h3 id="align-reads">Align reads</h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-meta">#!/usr/bin/bash</span>
-<span class="hljs-comment">#SBATCH -p short -N 1 -n 16 --mem 4gb</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-meta">#!/usr/bin/bash -l</span>
+<span class="hljs-comment">#SBATCH -p short -N 1 -n 1 -c 16 --mem 4gb</span>
 
 module load bwa
 module load samtools
@@ -62,7 +63,8 @@ samtools tview SRR10574912.bam --reference S_enterica_CT18.fasta
 <p><a href="https://github.com/ekg/freebayes">freebayes</a> is another very useful pipeline for non-model systems.</p>
 <h3 id="samtoolsbcftools-snp-and-indel-calling">Samtools/BCFTools SNP and INDEL calling</h3>
 <p><a href="http://www.htslib.org/workflow/">Workflows from the htslib</a></p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment">#SBATCH -p batch -N 1 -n 4 --mem 16gb</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-meta">#!/usr/bin/bash -l</span>
+<span class="hljs-comment">#SBATCH -p short -N 1 -n 1 -c 4 --mem 16gb</span>
 module load samtools
 module load bcftools
 GENOME=S_enterica_CT18.fasta
