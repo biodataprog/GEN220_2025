@@ -6,8 +6,9 @@
 
 It is necessary to index the genome in preparation of alignement.
 
-```
-#SBATCH -p short -N 1 -n 2 --mem 2gb
+```bash
+#!/usr/bin/bash -l
+#SBATCH -p short -N 1 -n 1 -c 2 --mem 2gb
 module load bwa
 GENOME=S_enterica_CT18.fasta
 bwa index $GENOME
@@ -16,8 +17,8 @@ bwa index $GENOME
 ### Align reads
 
 ```bash
-#!/usr/bin/bash
-#SBATCH -p short -N 1 -n 16 --mem 4gb
+#!/usr/bin/bash -l
+#SBATCH -p short -N 1 -n 1 -c 16 --mem 4gb
 
 module load bwa
 module load samtools
@@ -70,7 +71,8 @@ There are many standardized SNP calling pipelines. [GATK](https://software.broad
 [Workflows from the htslib](http://www.htslib.org/workflow/)
 
 ```bash
-#SBATCH -p batch -N 1 -n 4 --mem 16gb
+#!/usr/bin/bash -l
+#SBATCH -p short -N 1 -n 1 -c 4 --mem 16gb
 module load samtools
 module load bcftools
 GENOME=S_enterica_CT18.fasta
