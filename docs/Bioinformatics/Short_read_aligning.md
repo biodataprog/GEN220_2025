@@ -2,6 +2,23 @@
 
 ## BWA for short read alignment
 
+Read the manual/documentation for BWA
+
+```bash
+module load bwa
+bwa
+bwa index
+bwa mem
+```
+
+There are alternative faster implementation for bwa that is called `bwa-mem2`. See some of the documentation.
+```
+module load bwa-mem2
+bwa-mem2
+bwa-mem2 index
+bwa-mem2 mem
+```
+
 ### Index genome
 
 It is necessary to index the genome in preparation of alignement.
@@ -46,6 +63,22 @@ do
 done
 
 ```
+
+## samtools
+
+A multi-use tool for investigating SAM/BAM file format data.
+```
+module load samtools
+samtools
+``` 
+See the menu of options and explore a bit.
+
+Also see `sambamba`
+```bash
+module load sambamba
+sambamba
+```
+
 
 ## Visualizing depth of coverage
 
