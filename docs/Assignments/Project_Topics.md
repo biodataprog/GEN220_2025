@@ -36,3 +36,6 @@ Develop pipeline for screening for secondary metabolite clusters in genomes of i
 
 (need to provide more updates and examples here)
 
+# From SNPs to Genes to Functions
+
+Identify Genes with SNPs or SNVs based on previous work. Organize by which fall into Genes and those which have impacts on the gene either interrupting the coding sequence, changing amino acids, or splicing.  Gather the function of these genes and test for enrichment of domains, GO function, and provide a report.  Generalize this for data from GFF annotated genomes and VCF files from existing datasets or describe pipeline that can produce the necessary input.
