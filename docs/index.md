@@ -44,7 +44,7 @@ git clone https://github.com/biodataprog/GEN220_data.git
 * HW2 - [Python and BLAST](Assignments/HW3) [PDF](Assignments/HW3.pdf)
 
 # Project
-* 2025 Project ideas [2025 Project Topics](Project_Topics) [PDF](Project_Topics.pdf)
+* 2025 Project ideas [2025 Project Topics](Assignments/Project_Topics) [PDF](Assignments/Project_Topics.pdf)
 * [Project Team Ideas](Assignments/Project_Ideas) [PDF](Assignments/Project_Ideas.pdf)
 * [Project Team Report Template](Assignments/Project_Report_Template) [PDF](Assignments/Project_Report_Template.pdf)
 * [Project Presentation Info](Assignments/Project_Presentation) [PDF](Assignments/Project_Presentation.pdf)
