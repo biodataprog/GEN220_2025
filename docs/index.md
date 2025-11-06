@@ -42,6 +42,7 @@ git clone https://github.com/biodataprog/GEN220_data.git
 * HW1 - [Unix](Assignments/HW1) [PDF](Assignments/HW1.pdf)
 * HW2 - [Python 1](Assignments/HW2) [PDF](Assignments/HW2.pdf)
 * HW3 - [Python and BLAST](Assignments/HW3) [PDF](Assignments/HW3.pdf)
+* HW4 - [AI Programming](Assignments/HW4) [PDF](Assignments/HW4.pdf)
 
 # Project
 * 2025 Project ideas [2025 Project Topics](Assignments/Project_Topics) [PDF](Assignments/Project_Topics.pdf)
@@ -71,9 +72,9 @@ The course will be divided into three topic areas.
 1. [Bioinformatics: Basics and BLAST](Bioinformatics/Basic_Bioinformatics) [PDF](Bioinformatics/Basic_Bioinformatics.pdf)
 1. [Bioinformatics: Short Reads](Bioinformatics/Short_read_aligning) [PDF](Bioinformatics/Short_read_aligning.pdf)
 1. [Bioinformatics: RNASeq](Bioinformatics/RNASeq) [PDF](Bioinformatics/RNASeq.pdf)
-2. [Bioinformatics: Microbiome](Bioinformatics/Microbiome_data) [PDF](Bioinformatics/Microbiome_data.pdf)
 1. [Bioinformatics: Variation and SNPs](Bioinformatics/Variants) [PDF](Bioinformatics/Variants.pdf)
-1. [Bioinformatics: Data Ranges](Bioinformatics/Ranges_Features_overlap) [PDF](Bioinformatics/Ranges_Features_overlap.pdf)
+1. [Bioinformatics: Genomic Data Ranges](Bioinformatics/Ranges_Features_overlap) [PDF](Bioinformatics/Ranges_Features_overlap.pdf)
+1. [Bioinformatics: Microbiome](Bioinformatics/Microbiome_data) [PDF](Bioinformatics/Microbiome_data.pdf)
 1. [Phylogeny and Gene Families](Bioinformatics/Phylogeny_families) [PDF](Bioinformatics/Phylogeny_families.pdf)
 1. [Bioinformatics: Protein domains](Bioinformatics/Protein_domains) [PDF](Bioinformatics/Protein_domains.pdf)
 1. [Bioinformatics: Orthology](Bioinformatics/Orthology) [PDF](Bioinformatics/Orthology.pdf)
