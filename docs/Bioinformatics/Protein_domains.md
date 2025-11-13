@@ -52,8 +52,16 @@ hmmsearch --domtbl domtbl_results.out $HMM protein-db.fa > protein.hmmsearch
 
 Pfam2GO - [http://current.geneontology.org/ontology/external2go/pfam2go](http://current.geneontology.org/ontology/external2go/pfam2go)
 
-# Workshop
+# Workshop in class
 
-1. Searching for Pfam domains in sets of proteins - [Bioinformatics_4](https://github.com/biodataprog/GEN220_2019_examples/tree/master/Bioinformatics_4)
-See [search_SOD1.sh](https://github.com/biodataprog/GEN220_2019_examples/blob/master/Bioinformatics_4/search_SOD1.sh)
-2. Parsing report files
+Let's compare the genomes of cyanobacteria and identify if there are differences in gene content based
+on Protein domains.
+
+Many papers investigating the evolution and genomes of cyanobacteria. 
+* https://journals.asm.org/doi/10.1128/mbio.00561-19
+* https://bmcecolevol.biomedcentral.com/articles/10.1186/1471-2148-10-24
+
+1. Searching for Pfam domains in a set of proteins from several species (start with 3)
+   * Let's download some genomes/proteomes from [NCBI](https://www.ncbi.nlm.nih.gov/datasets/genome/?taxon=1117)
+2. Parsing report files and count the number of domains per species (in python)
+3. Summarize the content comparing with a tabled sorted by counts
